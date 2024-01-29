@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2480,         87]
+NotebookOptionsPosition[      1911,         69]
+NotebookOutlinePosition[      2313,         85]
+CellTagsIndexPosition[      2270,         82]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["WEEK-7_L1", "Title",
+ CellChangeTimes->{{3.829068999231324*^9, 
+  3.829069010393282*^9}},ExpressionUUID->"4ffe0110-167a-4e2f-ba46-\
+1a43d305ce89"],
+
+Cell[TextData[{
+ "solve the pde 2",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       RowBox[{"(", 
+        RowBox[{"x", ",", "t"}], ")"}]}], 
+      RowBox[{"\[PartialD]", "x"}]], "+", 
+     FractionBox[
+      RowBox[{"\[PartialD]", 
+       RowBox[{"(", 
+        RowBox[{"x", ",", "t"}], ")"}]}], 
+      RowBox[{"\[PartialD]", "t"}]]}], "=", 
+    RowBox[{"Sin", "(", "x", ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "c964ab18-4af4-4b76-8586-2e6d98da592b"],
+ " with the initial condition y(0,t)=cos(t):"
+}], "Text",
+ CellChangeTimes->{{3.82906902248953*^9, 
+  3.829069155601962*^9}},ExpressionUUID->"4c996e96-728a-482a-b5e7-\
+4814a029d2e0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol1", " ", "=", 
+     RowBox[{"DSolve", "[", 
+      RowBox[{"{", 
+       RowBox[{"D", "[", 
+        RowBox[{
+         RowBox[{"y", "[", 
+          RowBox[{"x", ",", "t"}], "]"}], ",", "x"}], "]"}]}]}]}], "]"}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8290691807562714`*^9, 
+  3.8290692431455617`*^9}},ExpressionUUID->"91a4d0e7-0f6e-450a-b4d2-\
+372e136f8592"]
+}, Open  ]]
+},
+WindowSize->{759, 601},
+WindowMargins->{{Automatic, 65}, {25, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2ec37450-9c14-4bca-bf34-2678a61183f9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 152, 3, 96, "Title",ExpressionUUID->"4ffe0110-167a-4e2f-ba46-1a43d305ce89"],
+Cell[735, 27, 728, 23, 40, "Text",ExpressionUUID->"4c996e96-728a-482a-b5e7-4814a029d2e0"],
+Cell[1466, 52, 429, 14, 28, "Input",ExpressionUUID->"91a4d0e7-0f6e-450a-b4d2-372e136f8592"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
