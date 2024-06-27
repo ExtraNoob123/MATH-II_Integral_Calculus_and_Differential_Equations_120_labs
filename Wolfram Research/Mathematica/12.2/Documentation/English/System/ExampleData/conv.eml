@@ -1,0 +1,59 @@
+Return-Path: <alice@docex.wolfram.com>
+X-Original-To: eve@docex2.wolfram.com
+Delivered-To: eve@docex2.wolfram.com
+Received: from docex2.wolfram.com [10.10.10.1] 	by boblxlap with IMAP (fetchmail-6.3.26) 	for <bob@localhost> (single-drop); Wed, 18 May 2016 18:16:33 -0500 (CDT)
+Received: from mymailhub.wolfram.com (mymailhub.wolfram.com [10.10.10.2]) 	by docex2.wolfram.com (Postfix) with ESMTP id 8745B32D49 	for <eve@docex2.wolfram.com>; Fri, 13 May 2016 14:01:28 -0500 (CDT)
+Received: by mymailhub.wolfram.com (Postfix) 	id 82DB01023DEB; Fri, 13 May 2016 14:01:28 -0500 (CDT)
+Delivered-To: eve@docex.wolfram.com
+Received: from myhome.wolfram.com (myhome.wolfram.com [10.10.10.3]) 	by mymailhub.wolfram.com (Postfix) with ESMTP id 740FE1023DDE; 	Fri, 13 May 2016 14:01:28 -0500 (CDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mymailhub.wolfram.com 740FE1023DDE
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=docex.wolfram.com; 	s=mymailhub t=1463166088; 	bh=7IAngWp8/MMYBSNHA3yH3IBK5oVBXWgkBbuozmtsOwA=; 	h=Reply-To:Subject:References:To:Cc:From:Date:In-Reply-To:From; 	b=K1PtyytHjiT4pUb/9j2wmVikmMOvMzRUSwpKiCN2vxpYF+l77laZ6nl4eoSVclCgd 	 wZ8l2csYrrcGPtQV7Sym9i1LEFSamk3w9l9H/IrciIVI+2OVZbZsWe9yZ8iNPgfy1E 	 /75nBWUd+0jUPIDniMF5xgVcL8dTevqe0Ww6XvR8=
+Received: from alicemachine.test.myweb.wolfram.com (alicemachine.test.myweb.wolfram.com [10.10.10.4]) 	by myhome.wolfram.com (Postfix) with ESMTPSA id 5C392D019C; 	Fri, 13 May 2016 14:01:28 -0500 (CDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 myhome.wolfram.com 5C392D019C
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=docex.wolfram.com; s=myhome 	t=1463166088; bh=7IAngWp8/MMYBSNHA3yH3IBK5oVBXWgkBbuozmtsOwA=; 	h=Reply-To:Subject:References:To:Cc:From:Date:In-Reply-To:From; 	b=wWClAeAyH6XO3S7uB+8YMua9yX8KeSarw9nSPOHjNzwOfHqzsGUuLmda+EePA1qx5 	 7lHZD0+ZqlWC44FP1dnVlKUdJkX/+3H9WQoLvrK2mOH/QuO8mVaZ7DxMy0+s9ippyp 	 5nQCKrjpyQTnnjsy3lEbTI+hLfQeTDX0SgU+WmBg=
+Reply-To: Alice Johnson <alice@docex.wolfram.com>
+Subject: Re: Wolfram Language function question
+References: <20160513185033.GA8236@myhome.wolfram.com>  <e7e76ee9-ba72-46f4-30c0-05aac64fbbe8@docex.wolfram.com>  <20160513185845.GB8285@myhome.wolfram.com>
+To: Bob Doe <bob@docex.wolfram.com>
+Cc: Chuck Smith <chuck@docex.wolfram.com>
+From: Alice Johnson <alice@docex.wolfram.com>
+Message-ID: <4010adc4-de4b-0743-4d39-cc86d2603aad@docex.wolfram.com>
+Date: Fri, 13 May 2016 14:01:27 -0500
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:45.0)  Gecko/20100101 Thunderbird/45.0
+MIME-Version: 1.0
+In-Reply-To: <20160513185845.GB8285@myhome.wolfram.com>
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Glad that I can help! CCing Chuck so he can see this example.
+
+
+On 5/13/16 1:58 PM, Bob Doe wrote:
+> Great.  This is exactly what I am looking for.
+> I have a couple more questions for you.
+> If I have an association assoc = <|"a" -> 1, "b" -> 2, "c" -> 3|>, how would I add another key-value pair, like "d" -> 4, to the existing association?
+The function AssociateTo can add a key-value pair to an association in 
+place. For example, you could do AssociateTo[assoc, {"d" -> 4, "e" -> 
+5}], and assoc would now be <|"a" -> 1, "b" -> 2, "c" -> 3, "d" -> 4, 
+"e" -> 5|>.
+> Also I noticed if I try to get the value assoc["z"], it returns Missing["KeyAbsent"]. Is there any way I could instead get the value 0 if the key doesn't exist?
+There is another function called Lookup which returns the value 
+associated with a key if it exists, and takes an optional third 
+parameter to define a default return value.
+Lookup[assoc, "z", 0] should do what you're looking for.
+>
+> Thanks,
+>
+> Bob
+>
+> On Fri, May 13, 2016 at 01:52:15PM -0500, Alice Johnson wrote:
+>>
+>> On 5/13/16 1:50 PM, Bob Doe wrote:
+>>> Alice,
+>>>
+>>> Which function should I be using if I want to have a key-value pair?
+>>>
+>>> Bob
+>> You can use Association to do that.
+>>
+>> Alice
